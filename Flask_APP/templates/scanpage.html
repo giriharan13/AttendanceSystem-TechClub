@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+{% block content %}
+<div id="scan">
+<img id="bg" src="{{ url_for('video_feed') }}">
+    <div>
+        <p id="instructions">
+            Instructions:
+                <ul id="instructions">
+                   <li>Make sure that your face is in the center of the camera</li>
+                   <li>Take the picture in good lighting</li>
+                   <li>Don't try to mark attendance with the help of pictures.You will be suspended if found</li>
+                </ul>
+        </p>
+    </div>
+</div>
+<div id="scan">
+<form id="form" method="POST" action="">
+    {{ form.hidden_tag() }}
+     {{ form.MarkAttendance(id="markButton") }}
+</form>
+</div>
+
+
+{% endblock content %}

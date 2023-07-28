@@ -1,0 +1,236 @@
+            #title{
+                 font-family:Lato;
+                 display:flex;
+                 flex-direction:row;
+                 justify-content:center;
+                 align-items:center;
+              }
+              #nav
+              {
+                 display:flex;
+                 position:fixed;
+                 top:125px;
+                 right:10px;
+              }
+              .loader{
+              position:fixed;
+              top:0;
+              bottom:0;
+              width:100vw;
+              heigth:100vh;
+              display:flex;
+              flex-direction:column;
+              justify-content:center;
+              align-items:center;
+              background-color:#1c1d1f;
+              transition: opacity 0.75s,visibility 0.75s;
+              opacity:1;
+              }
+
+              .loader-hidden{
+                opacity:0;
+                visibility:hidden;
+              }
+
+              .loader::after{
+                content: "";
+                width:75px;
+                height:75px;
+                border:15px solid #dddddd;
+                border-top-color:#557B83;
+                border-radius:50%;
+                animation: loading 0.75s ease infinite;
+              }
+
+              @keyframes loading {
+                from{
+                    transform:rotate(0turn);
+                }
+                to{
+                    transform:rotate(1turn);
+                }
+              }
+
+            #developer{
+                font-family:Lato;
+                 font-size:20px;
+                 display:flex;
+                 flex-direction:row;
+                 justify-content:center;
+                 align-items:center;
+                  color:#3cacab;
+             }
+            #labels{
+                    font-family:Lato;
+                    display:inline-block;
+                    font-size:15px;
+
+            } 
+          #buttons{
+               padding:6px;
+               padding-left:10px; 
+               padding-right:10px;
+               font-family:Lato;
+                border-radius:14px;
+                border:1px solid white;
+
+         }
+         #welcome
+         {
+            color:white;
+            font-family:lato;
+            font-size:50px;
+            padding:0px;
+            margin:0;
+         }
+         #attendance{
+            color:white;
+            font-family:lato;
+            display:inline-block;
+            margin:0px;
+            color:#39AEA9;
+         }
+         #info{
+            display:flex;
+            flex-direction:column;
+            padding:30px;
+            flex-wrap:wrap;
+
+         }
+
+          #inputbox{
+               padding:6px;
+               width:200px;
+               font-family:Lato; 
+                border-radius:14px;
+                border:1px solid white;
+              
+           }
+           #loginbox{
+               display:flex;
+               flex-direction:column;
+               justify-content:center;
+                 align-items:center;
+                 width:300px;
+                 padding:50px;
+                 border:1px solid white;
+                 border-radius:20px;
+                 
+
+          }
+          #loginform{
+                 display:flex;
+                 flex-direction:column;
+                 align-items:center;
+                 justify-column:center;
+          }
+          #flash{
+               background-color:red;
+               color:white;
+               font-family:lato;
+               display:inline-block;
+               position:fixed;
+               bottom:10px;
+               right:10px;
+               padding:10px;
+               border-radius:15px;
+          }
+          #studentDetails{
+               font-family:lato;
+               display:inline-block;
+               position:fixed;
+               top:10px;
+               right:10px;
+               background-color:#557B83;
+               color:white;
+               padding:10px;
+               font-size:10px;
+               border-radius:10px;
+          }
+          #markButton{
+               padding:10px;
+               color:white;
+               background-color:#39AEA9;
+               font-family:lato;
+               border:none;
+               border-radius:15px;
+               margin:5px;
+          }
+          #markButton:hover{
+               opacity:0.7;
+          }
+          #markButton:active{
+               opacity:0.5;
+          }
+          body{
+               background-color:#1c1d1f;
+          }
+          #bg{
+              border-radius:20px;
+              width:500px;
+              margin:30px;
+          }
+          #instructions{
+            font-family:lato;
+            color:white;
+          }
+          #scan{
+            display:flex;
+            flex-direction:row;
+            justify-content:center;
+            align-items:center;
+          }
+          table {
+              font-family: lato, sans-serif;
+              border-collapse: collapse;
+              width: 50%;
+              background-color:#1c1d1f;
+              margin:10px;
+              border: 1px solid #557B83;
+            }
+
+            td, th {
+              text-align: left;
+              padding: 8px;
+            }
+            th{
+               background-color:#557B83;
+               color:white;
+            }
+            #status{
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                height:60vh;
+            }
+            #headStatus{
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+
+
+            }
+            #headStatus * {
+                margin:5px;
+            }
+
+             #dateButton{
+               padding:8px;
+               color:#39AEA9;
+               background-color:white;
+               font-family:lato;
+               border:none;
+               border-radius:15px;
+               margin:5px;
+          }
+          #dateButton:hover{
+               opacity:0.7;
+          }
+          #dateButton:active{
+               opacity:0.5;
+          }
+          * {
+             font-family:lato;
+             //color:white;
+          }

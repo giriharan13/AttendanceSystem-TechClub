@@ -1,0 +1,38 @@
+{% extends "template.html" %}
+{% block content %}
+<form id="loginform" method="POST" action="">
+    {{ form.hidden_tag() }}
+    <h1 id="title" style="color:white;">Cloud Based Attendance System[Using Facial Recognition]</h1>
+        <h2 id="developer" >Front end Developed by S.ANNARAMASWAMY</h2>
+        <div id="loginbox">
+            <div id="section">
+            <h3 id="labels">{{ form.email_id.label(style="color:white;") }} </h3>
+            {% if form.email_id.errors %}
+            {{ form.email_id(id="inputbox") }}
+        {% for error in form.email_id.errors %}
+           <span> {{ error }}</span>
+        {% endfor %}
+    {% else %}
+        {{ form.email_id(id="inputbox") }}
+    {% endif %}
+             </div>
+            <div id="section">
+            <h3 id="labels">{{ form.password.label( style="color:white;") }} </h3>
+    {% if form.password.errors %}
+       {{ form.password(id="inputbox")}}
+       {% for error in form.username.errors %}
+           <span> {{ error }}</span>
+       {% endfor %}
+    {% else %}
+       {{ form.password(id="inputbox")}}
+    {% endif %}
+            </div>
+            
+            <div id="section">
+                <button id="buttons">Forgot Password?</button>                
+                <button id="buttons">Login</button>
+            </div>
+
+        </div>
+</form>
+{% endblock content %}
