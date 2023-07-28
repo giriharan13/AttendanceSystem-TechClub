@@ -1,0 +1,60 @@
+{% extends "template.html" %}
+{% block content %}
+    <div id="info">
+    <h1 id="welcome"> Welcome {{ user.name }}!</h1>
+        {% if user.get_role()=="STUDENT" %}
+                    <div id="studentDetails">
+                <h1>Register Number:{{ user.register_number }}</h1>
+                <h1>Email:{{ user.email_id }}</h1>
+                    </div>
+            {% if attendance != 0 %}
+            <h3 id="attendance">You have already marked attendance for today!</h3>
+            <img id="bg" src="{{ url_for('result_feed') }}">
+            {% endif %}
+        {% elif user.get_role()=="ADMIN" %}
+            <div id="studentDetails">
+        <h1>id number:{{ user.id_number }}</h1>
+        <h1>Email:{{ user.email_id }}</h1>
+            </div>
+        <div id="status">
+            <div id="headStatus">
+            <h3 style="color:white"> Student Attendance status {{ todayDate }}</h3>
+                    <form id="form" method="POST" action="">
+             {{ dateFilterForm.hidden_tag() }}
+             {{ dateFilterForm.dateFilter(id="dateButton") }}
+             {{ dateFilterForm.filter(id="markButton") }}
+                    </form>
+            </div>
+           <table>
+               <tr>
+                   <th>Student Name</th>
+                   <th>Status</th>
+               </tr>
+            {% for student in allStudents.query.all() %}
+                {% if allAttendance.query.filter(allAttendance.register_number==student.register_number,func.cast(allAttendance.date,Date)==todayDate).first() %}
+                    <tr>
+                        <td style="color:white">{{ student.name }}</td>
+                        <td style="color:green">Present</td>
+                    </tr>
+               {% else %}
+                <tr>
+                        <td style="color:white">{{ student.name }}</td>
+                        <td style="color:red">Not Marked</td>
+                    </tr>
+               {% endif %}
+            {% endfor %}
+           </table>
+        </div>
+        {% endif %}
+    </div>
+
+    <div id="nav">
+        {% if attendance == 0 %}
+        <form id="form" method="POST" action="">
+            {{ form.hidden_tag() }}
+            {{ form.MarkAttendance(id="markButton") }}
+        </form>
+        {% endif %}
+        <button id="markButton"><a href="/logout" style="text-decoration: none;color:white;">Logout</a> </button>
+    </div>
+{% endblock content %}

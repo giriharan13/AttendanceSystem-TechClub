@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+<head>
+<title> Home page </title>
+<link rel="stylesheet" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+    {% block content %}{% endblock content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div id="flash" style="background-color:{{message.split(':')[0]}};" >
+                {{ message.split(":")[1] }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<div  class="loader"></div>
+</body>
+<script>
+    window.addEventListener("load", ()=>{
+        const loader = document.querySelector(".loader");
+        loader.classList.add("loader-hidden");
+    })
+
+</script>
+</html>
